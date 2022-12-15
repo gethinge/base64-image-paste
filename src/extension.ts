@@ -8,6 +8,7 @@ import { spawn, exec } from 'child_process';
 import { platform } from 'process';
 import { resolve } from 'path';
 import { rejects } from 'assert';
+import { Config } from './config';
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -42,19 +43,7 @@ export function deactivate() { }
 class Util {
 	static fileSeparator: string = Util.getFileSeparator();
 
-	private static getFileSeparator(): string {
-		let fs = "/";
-		switch (platform) {
-			case "win32":
-				fs = "\\";
-				break;
-			case "linux":
-			case "darwin":
-				fs = "/";
-				break;
-		}
-		return fs;
-	}
+	
 
 	public static paste() {
 		let editor = vscode.window.activeTextEditor;

@@ -46,10 +46,40 @@
     "configuration": {
       "title": "Markdown Image",
       "properties": {
-        "some.config": {
+        "image.save.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "是否保存图片至本地"
+        },
+        "image.storage.dir": {
           "type": "string",
-          "default": "default",
-          "description": "测试玩"
+          "default": "images",
+          "description": "本地图片保存目录"
+        },
+        "image.auto.compress.enable": {
+          "type": "boolean",
+          "default": false,
+          "description": "是否自动压缩图片"
+        },
+        "image.auto.compress.threshold": {
+          "type": "number",
+          "default": 1000,
+          "description": "图片自动压缩阈值,单位px"
+        },
+        "image.name": {
+          "type":"string",
+          "default":"",
+          "description": "本地保存图片名称，为空表示文件名-索引"
+        },
+        "image.auto.sort.enable": {
+          "type":"boolean",
+          "default":true,
+          "description": "保存文件时是否自动整理图片索引"
+        },
+        "image.name.manual.enable": {
+          "type":"boolean",
+          "default":false,
+          "description": "是否手动命名图片"
         }
       }
     }
